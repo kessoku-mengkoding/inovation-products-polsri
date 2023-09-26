@@ -21,6 +21,7 @@ function App() {
         </div>
       </section>
       <main className="flex flex-col gap-[100px] py-[20px] px-[80px]">
+        {/* Promo */}
         <section className="flex lg:flex-row flex-col">
           <img src="" alt="diskon" className="w-[700px] max-h-[400px] bg-brand" />
           <div className="bg-brand bg-opacity-5 p-[40px] w-full">
@@ -34,12 +35,40 @@ function App() {
           </ButtonPrimary>
           </div>
         </section>
+        {/* Fitur */}
         <section>
           <h1 className="text-4xl font-semibold text-center">Kenali Keunggulan Smartwatch X1</h1>
           <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
           <div className="grid grid-cols-3">
+            <div>
+              <div className="flex flex-col gap-[5px]">
 
+              </div>
+            </div>
+            <div>
+              <img src="" alt="produk" />
+            </div>
+            <div>
+
+            </div>
           </div>
+        </section>
+        {/* Showcase */}
+        <section>
+        <h1 className="text-4xl font-semibold text-center">Koleksi Smartwatch Unggulan Kami</h1>
+          <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
+        </section>
+        {/* Testimonial */}
+        <section>
+
+        </section>
+        {/* About */}
+        <section>
+
+        </section>
+        {/* Contact */}
+        <section>
+          
         </section>
       </main>
     </>
