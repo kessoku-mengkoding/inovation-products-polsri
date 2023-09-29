@@ -1,10 +1,17 @@
 import "./App.css";
 
 import { ButtonPrimary, ButtonSecondary } from "./components/Button";
+import { Navbar } from "./components/Navbar";
+
+import founder from "../src/assets/founder.png";
+import promo from "../src/assets/promo.png";
+import fitur from "../src/assets/fitur.png";
+import product1 from "../src/assets/product/product1.png"
 
 function App() {
   return (
     <>
+      <Navbar />
       <section className="w-full h-screen flex px-[80px] items-center justify-between ">
         <div className="max-w-[584px]">
           <p className="text-brand text-sm font-medium mb-4">
@@ -13,10 +20,10 @@ function App() {
           <h1 className="text-4xl font-semibold mb-8 leading-[150%]">
             <span className="bg-brand bg-opacity-5 text-brand">
               Menghadirkan Masa Depan
-            </span>{" "}
-            Kepada Pergelangan Tangan Anda
+            </span><br/>
+             Kepada Pergelangan Tangan Anda
           </h1>
-          <p className="text-base mb-8">
+          <p className="max-w-[584px] text-base mb-8">
             Smartwatch X1 - Masa depan teknologi di pergelangan tangan Anda.
             Tampilan futuristik, fitur cerdas, dan desain elegan dalam satu
             paket.
@@ -27,13 +34,13 @@ function App() {
           <img src="" alt="test" className="w-[500px] bg-gray-600" />
         </div>
       </section>
-      <main className="flex flex-col gap-[100px] py-[20px] px-[80px]">
+      <main className="flex flex-col gap-[120px] py-[20px] px-[80px]">
         {/* Promo */}
         <section className="flex lg:flex-row flex-col">
           <img
-            src=""
+            src={promo}
             alt="diskon"
-            className="w-[700px] max-h-[400px] bg-brand"
+            className="w-[750px] max-h-[400px] bg-brand"
           />
           <div className="bg-brand bg-opacity-5 p-[40px] w-full">
             <p className="text-brand text-sm font-medium mb-2">
@@ -56,14 +63,48 @@ function App() {
             Kenali Keunggulan Smartwatch X1
           </h1>
           <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
-          <div className="grid grid-cols-3">
-            <div>
-              <div className="flex flex-col gap-[5px]"></div>
+          <div className="flex gap-[40px] mt-[80px] items-center">
+            <div className="flex flex-col gap-[40px]">
+              <div className="flex flex-col gap-[5px] items-end text-right">
+                <div className="bg-brand rounded-full w-[32px] h-[32px]">
+
+                </div>
+                <h3 className="font-semibold text-2xl">Pemantauan Kesehatan</h3>
+                <p>
+                Lacak detak jantung, tingkat aktivitas, dan tidur Anda.
+                </p>
+              </div>
+                          <div className="flex flex-col gap-[5px] items-end text-right">
+                <div className="bg-brand rounded-full w-[32px] h-[32px]">
+
+                </div>
+                <h3 className="font-semibold text-2xl">Notifikasi Terintegrasi</h3>
+                <p>
+                Tetap terhubung dengan pemberitahuan penting langsung di pergelangan tangan Anda.
+                </p>
+              </div>
             </div>
-            <div>
-              <img src="" alt="produk" />
+              <img src={fitur} alt="produk" className="max-w-max" />
+            <div className="flex flex-col gap-[40px]">
+              <div className="flex flex-col gap-[5px] items-start text-left">
+                <div className="bg-brand rounded-full w-[32px] h-[32px]">
+
+                </div>
+                <h3 className="font-semibold text-2xl">Konektivitas Lengkap</h3>
+                <p>
+                Sinkronkan dengan smartphone Anda untuk mengakses fitur-fitur yang lebih canggih.
+                </p>
+              </div>
+                <div className="flex flex-col gap-[5px] items-start text-left">
+                <div className="bg-brand rounded-full w-[32px] h-[32px]">
+
+                </div>
+                <h3 className="font-semibold text-2xl">Desain Elegan</h3>
+                <p>
+                Tampilan futuristik dalam rangkaian desain yang elegan dan nyaman dikenakan.
+                </p>
+              </div>
             </div>
-            <div></div>
           </div>
         </section>
         {/* Showcase */}
@@ -73,17 +114,23 @@ function App() {
           </h1>
           <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
           <div className="grid grid-cols-3 gap-[20px] mt-[80px]">
-            <div className="w-full h-full border border-gray-200 rounded-sm">
+            <div className="w-full h-full  rounded-sm shadow-xl">
               <div className="overflow-hidden relative">
                 <img
-                  src=""
+                  src={product1}
                   alt="product"
-                  className="h-[180px] lg:h-[300px] object-cover w-full bg-brand bg-opacity-5"
+                  className="h-[180px] lg:h-[300px] w-full bg-brand bg-opacity-5"
                 />
               </div>
-              <div className="p-[10px] flex flex-col gap-[10px] items-center">
+              <div className="p-[20px] flex flex-col gap-[10px] items-center">
                 <h3 className="text-xl font-semibold">Smartwatch X1 Pro</h3>
                 <h3 className="text-xl font-semibold text-brand">Rp 500.000</h3>
+                <div className="flex gap-2 mb-2">
+                <i className="lni lni-star-fill text-yellow-500"></i>
+                <i className="lni lni-star-fill text-yellow-500"></i>
+                <i className="lni lni-star-fill text-yellow-500"></i>
+                <i className="lni lni-star-fill text-yellow-500"></i>
+                </div>
                 <ButtonPrimary>
                   Tambah ke keranjang
                 </ButtonPrimary>
@@ -97,31 +144,33 @@ function App() {
           </div>
         </section>
         {/* Testimonial */}
-        <section></section>
+        <section>
+
+        </section>
         {/* About */}
-        {/* <section>
+        <section>
         <div className="flex flex-col lg:flex-row lg:relative">
           <img
-            src="assets/image/about/about1.png"
-            className="w-full lg:w-[712px]"
+            src={founder}
+            className="w-full lg:w-[700px]"
             alt="about"
           />
           <div
-            className="pt-4 lg:p-[60px] bg-white lg:absolute lg:w-[680px] lg:bottom-0 lg:right-0 flex flex-col gap-5"
+            className="pt-4 lg:p-[60px] bg-white lg:absolute lg:w-[680px] h-max lg:bottom-0 lg:right-0 "
           >
             <p className="text-brand text-sm font-medium mb-2">
               TENTANG PEMILIK PRODUK
             </p>
-            <h1 className="text-4xl font-semibold mb-8 max-w-[400px] leading-[150%]">
+            <h2 className="text-[32px] font-semibold mb-6 max-w-[500px] leading-[150%]">
               Cerita di Balik Kreativitas: Mengenai Pemilik Produk
-            </h1>
+            </h2>
             <p className="text-base mb-8 max-w-[580px]">
             Saya memiliki visi untuk menciptakan produk yang tidak hanya berguna tetapi juga memadukan keindahan desain. Saya berkomitmen untuk memberikan nilai tambah kepada pengguna dengan setiap produk yang kami hasilkan.
             </p>
-            <ButtonPrimary>Hubungi saya</ButtonPrimary>
+            <ButtonPrimary className="w-max">Baca selengkapnya</ButtonPrimary>
           </div>
         </div>
-        </section> */}
+        </section>
         {/* Contact */}
         <section className="flex flex-col-reverse lg:flex-row h-max gap-[60px]">
         <div
@@ -137,21 +186,21 @@ function App() {
             <input
               type="text"
               placeholder="Masukan nama anda"
-              className="border border-second placeholder-gray-500 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
+              className="border border-gray-400 rounded-[4px] placeholder-gray-600 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
             />
           </div>
           <div className="flex flex-col gap-1 w-full">
             <input
               type="text"
               placeholder="Masukan email anda"
-              className="border border-second placeholder-gray-500 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
+              className="border border-gray-400 rounded-[4px] placeholder-gray-600 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
             />
           </div>
           <div className="flex flex-col gap-1 w-full">
             <textarea
               type="text"
               placeholder="Masukan pesan anda anda"
-              className="border border-second placeholder-gray-500 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
+              className="border border-gray-400 rounded-[4px] placeholder-gray-600 text-second px-4 py-2 w-full bg-transparent focus:outline-none focus:border-brand"
             ></textarea>
           </div>
           <ButtonPrimary>
