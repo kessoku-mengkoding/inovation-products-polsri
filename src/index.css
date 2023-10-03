@@ -36,3 +36,35 @@ html,body {
 .nav-link a:hover::after {
   width: 50%;
 }
+
+.primaryButton:before{
+	position:absolute;
+	content:'';
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:#011640;
+	transition:all 0.3s ease-out;
+	transform:scaleX(0);
+}
+
+.primaryButton:hover:before{
+	transform:scaleX(1);
+}
+
+.secondaryButton:before{
+	position:absolute;
+	content:'';
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	@apply bg-brand;
+	transition:all 0.3s ease-out;
+	transform:scaleX(0);
+}
+
+.secondaryButton:hover:before{
+	transform:scaleX(1);
+}

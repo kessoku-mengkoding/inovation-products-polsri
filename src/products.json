@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartwatch X1",
+      "rating": 4.5,
+      "image": "/src/assets/product/product1.png",
+      "price": "Rp 399.999"
+    },
+    {
+      "id": 2,
+      "name": "Smartwatch X2",
+      "rating": 4.0,
+      "image": "/src/assets/product/product2.png",
+      "price": "Rp 899.999"
+    },
+    {
+      "id": 3,
+      "name": "Smartwatch X3",
+      "rating": 4.8,
+      "image": "/src/assets/product/product3.png",
+      "price": "Rp 799.999"
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch X4",
+      "rating": 4.2,
+      "image": "/src/assets/product/product4.png",
+      "price": "Rp 349.999"
+    },
+    {
+      "id": 5,
+      "name": "Smartwatch A1 Pro",
+      "rating": 4.7,
+      "image": "/src/assets/product/product5.png",
+      "price": "Rp 1.499.999"
+    },
+    {
+      "id": 6,
+      "name": "Smartwatch X6",
+      "rating": 4.4,
+      "image": "/src/assets/product/product6.png",
+      "price": "Rp 129.999"
+    },
+    {
+      "id": 7,
+      "name": "Smartwatch X7",
+      "rating": 4.6,
+      "image": "/src/assets/product/product7.png",
+      "price": "Rp 599.999"
+    },
+    {
+      "id": 8,
+      "name": "Smartwatch X8",
+      "rating": 4.9,
+      "image": "/src/assets/product/product8.png",
+      "price": "Rp 449.999"
+    },
+    {
+      "id": 9,
+      "name": "Smartwatch X9",
+      "rating": 4.3,
+      "image": "/src/assets/product/product9.png",
+      "price": "Rp 79.999"
+    }
+  ]
+}
