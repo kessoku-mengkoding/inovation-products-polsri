@@ -35,8 +35,8 @@ export function Navbar() {
         <a href="#" className="uppercase relative text-sm">Contact</a>
       </div>
       <div className="flex gap-4 text-lg items-center">
-      <i className="lni lni-search-alt cursor-pointer"></i>
-      <i className="lni lni-cart-full cursor-pointer"></i>
+      <i className="lni lni-search-alt cursor-pointer hover:text-brand"></i>
+      <i className="lni lni-cart-full cursor-pointer hover:text-brand"></i>
       
       <ButtonSecondaryS>
         Login

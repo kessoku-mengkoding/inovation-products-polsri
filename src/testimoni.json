@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Sarah T.",
+    "testimonial": "Smartwatch X1 adalah teman sejati saya. Fitur pemantauan kesehatan yang akurat membantu saya tetap berada dalam bentuk terbaik saya.",
+    "job": "Freelancer",
+    "image": "/src/assets/testimoni/person1.png"
+  },
+  {
+    "name": "Michael L.",
+    "testimonial": "Smartwatch Neo3 sangat worth it digunakan untuk sehari-hari. Dengan harga yang lebih murah daripada pesaingnya, namun fitur yang ada didalamnya sangat memenuhi ekspetasi saya!",
+    "job": "Tech Enthusiast",
+    "image": "/src/assets/testimoni/person2.png"
+  },
+  {
+    "name": "Fia M.",
+    "testimonial": "Smartwatch X2 adalah teman sejati saya. Fitur pemantauan kesehatan yang akurat membantu saya tetap berada dalam bentuk terbaik saya.",
+    "job": "Freelancer",
+    "image": "/src/assets/testimoni/person3.png"
+  }
+]

@@ -6,14 +6,56 @@ import { Footer } from "./components/footer";
 
 import { useEffect, useState } from "react";
 
+// import Slider from "react-slick";
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+
+import testimoniData from "./testimoni.json";
+
+
+
 function App() {
   const [products, setProducts] = useState([]);
+  const [testimoni, setTestimoni] = useState([]);
 
+    
+  useEffect(() => {
+    setTestimoni(testimoniData);
+  }, []);
+
+  
   useEffect(() => {
     fetch("/src/products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
+
+  
+  // showcase slider
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const itemsPerPage = 3;
+  const totalSlides = Math.ceil(products.length / itemsPerPage);
+
+  // const settings = {
+  //   dots:false,
+  //   fade: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // }; 
+
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev === testimoni.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? testimoni.length - 1 : prev - 1));
+  };
 
   return (
     <>
@@ -41,7 +83,7 @@ function App() {
           <img src="" alt="test" className="w-[500px] bg-gray-600" />
         </div>
       </section>
-      <main className="flex flex-col gap-[160px] py-[20px] px-[80px]">
+      <main className="flex flex-col gap-[200px] py-[20px] px-[80px]">
         {/* Promo */}
         <section className="flex lg:flex-row flex-col">
           <img
@@ -140,97 +182,118 @@ function App() {
           </h1>
           <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
           <div className="grid grid-cols-3 gap-[20px] mt-[80px]">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="w-full h-full rounded-sm shadow-xl"
-              >
-                <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-[291px] m-auto object-position"
-                  />
-                </div>
-                <div className="p-[20px] flex flex-col gap-[10px] items-center">
-                  <h3 className="text-xl font-semibold">{product.name}</h3>
-                  <h3 className="text-xl font-semibold text-brand">
-                    {product.price}
-                  </h3>
-                  <div className="flex gap-2 mb-2">
-                    {Array.from({ length: Math.floor(product.rating) }).map(
-                      (_, index) => (
-                        <i
-                          key={index}
-                          className="lni lni-star-fill text-yellow-500"
-                        ></i>
-                      )
-                    )}
+            {products
+              .slice(
+                currentIndex * itemsPerPage,
+                (currentIndex + 1) * itemsPerPage
+              )
+              .map((product) => (
+                <div
+                  key={product.id}
+                  className="w-full h-full rounded-sm shadow-xl"
+                >
+                  <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-[291px] m-auto object-position"
+                    />
                   </div>
-                  <ButtonPrimary>
-
-                    Tambah ke keranjang
-                  </ButtonPrimary>
+                  <div className="p-[20px] flex flex-col gap-[10px] items-center">
+                    <h3 className="text-xl font-semibold">{product.name}</h3>
+                    <h3 className="text-xl font-semibold text-brand">
+                      {product.price}
+                    </h3>
+                    <div className="flex gap-2 mb-2">
+                      {Array.from({ length: Math.floor(product.rating) }).map(
+                        (_, index) => (
+                          <i
+                            key={index}
+                            className="lni lni-star-fill text-yellow-500"
+                          ></i>
+                        )
+                      )}
+                    </div>
+                    <ButtonPrimary>Tambah ke keranjang</ButtonPrimary>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <div className="flex gap-2 justify-center mt-[40px]">
-            <span className="dot bg-brand h-[12px] w-[28px] rounded-[10px] cursor-pointer">
-            </span>
-            <span className="dot bg-gray-400 h-[12px] w-[12px] rounded-full cursor-pointer">
-            </span>
-            <span className="dot bg-gray-400 h-[12px] w-[12px] rounded-full cursor-pointer">
-            </span>
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <span
+                key={index}
+                className={`cursor-pointer h-[12px] transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-brand w-[28px] rounded-[10px] "
+                    : "bg-gray-400 w-[12px] rounded-full"
+                }`}
+                onClick={() => setCurrentIndex(index)}
+              ></span>
+            ))}
           </div>
           <div className="mt-[60px] mx-auto w-max">
             <ButtonSecondary>Lihat selengkapnya</ButtonSecondary>
           </div>
         </section>
         {/* Testimonial */}
-        <section className="relative">
+        <section className="relative overflow-hidden">
           <h1 className="text-4xl font-semibold text-center">
             Apa yang Pelanggan Katakan tentang Kami
           </h1>
           <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 mb-[60px] block"></span>
-          <div className="absolute bottom-0 right-[80px] flex gap-3">
-            <span className="bg-brand cursor-pointer rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+          <div className="absolute bottom-0 right-[80px] flex gap-3 z-[3]">
+            <span 
+              onClick={prevSlide}
+              className="shadow-md bg-brand cursor-pointer rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
               <i className="lni lni-chevron-left text-xl"></i>
             </span>
-            <span className="bg-brand cursor-pointer rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+            <span 
+              onClick={nextSlide}
+            className="shadow-md bg-brand cursor-pointer rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
               <i className="lni lni-chevron-right text-xl"></i>
             </span>
           </div>
-          <section>
-            <div className="flex items-end gap-[80px]">
-              <div className="relative">
-                <img
-                  src="/src/assets/testimoni/person1.png"
-                  alt="testi1"
-                  className="min-w-[454px] object-contain relative z-[2]"
-                />
-                <span className="bg-brand w-full h-[400px] rounded-tr-[160px] block absolute bottom-0 shadow-lg"></span>
-              </div>
-              <div className="flex flex-col gap-[100px] w-auto">
-                <div>
-                  <img
-                    src="/src/assets/quote.png"
-                    className="w-[56px] mb-6"
-                    alt="quote"
-                  />
-                  <h4 className="text-xl">
-                    Smartwatch X1 adalah teman sejati saya. Fitur pemantauan
-                    kesehatan yang akurat membantu saya tetap berada dalam
-                    bentuk terbaik saya.
-                  </h4>
+          <section className="">
+              {
+                testimoni.map((item, index) => (
+                  <div
+                  key={index}
+                  className={`min-w-full   transition-opacity duration-500 ${
+                    index === activeSlide ? 'opacity-100  relative' : 'opacity-0 absolute'
+                  }`}
+                   style={{ zIndex: index === activeSlide ? 2 : 0, transitionDelay: `${index * 0.2}s` }}
+                  >
+                  <div className="flex items-end gap-[80px] w-full">
+                    <div className="relative h-[500px]">
+                      <img
+                        src={item.image}
+                        alt="testi"
+                        className="min-w-[454px] object-contain relative z-[2]"
+                      />
+                      <span className="bg-brand w-full h-[400px] rounded-tr-[160px] block absolute bottom-0 shadow-lg"></span>
+                    </div>
+                    <div className="flex flex-col gap-[100px] w-auto">
+                      <div>
+                        <img
+                          src="/src/assets/quote.png"
+                          className="w-[56px] mb-6"
+                          alt="quote"
+                        />
+                        <h4 className="text-xl">
+                          {item.testimonial}
+                        </h4>
+                      </div>
+                      <div>
+                        <p className="font-medium">{item.name}</p>
+                        <p>{item.job}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium">Sarah T.</p>
-                  <p>Freelancer</p>
-                </div>
-              </div>
-            </div>
-          </section>
+                ))
+              }
+              </section>
         </section>
         {/* About */}
         <section>
