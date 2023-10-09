@@ -2,7 +2,14 @@ import { ButtonPrimary, ButtonSecondary } from "./components/Button";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/footer";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  CubeCamera,
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,6 +20,51 @@ import "aos/dist/aos.css";
 AOS.init();
 
 import testimoniData from "./testimoni.json";
+
+function Box(props) {
+  const meshRef = useRef();
+  const [hovered, setHover] = useState(false);
+  const [active, setActive] = useState(false);
+  useFrame((state, delta) => (meshRef.current.rotation.x += delta));
+  return (
+    <mesh
+      {...props}
+      ref={meshRef}
+      scale={active ? 1.5 : 1}
+      onClick={(event) => setActive(!active)}
+      onPointerOver={(event) => setHover(true)}
+      onPointerOut={(event) => setHover(false)}
+    >
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+    </mesh>
+  );
+}
+
+function Object() {
+  return (
+    <>
+      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
+      <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
+
+      <mesh>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="blue" />
+      </mesh>
+    </>
+  );
+}
+
+function Scene() {
+  return (
+    <Suspense fallback={null}>
+      <Canvas>
+        <ambientLight />
+        <Object />
+      </Canvas>
+    </Suspense>
+  );
+}
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -76,8 +128,8 @@ function App() {
           </p>
           <ButtonPrimary>BELI SEKARANG</ButtonPrimary>
         </div>
-        <div>
-          <img src="" alt="test" className="w-[500px] bg-gray-600" />
+        <div className="w-6/12 h-full">
+          <Scene />
         </div>
       </section>
       <main className="flex flex-col gap-[200px] py-[20px] px-[80px] overflow-x-hidden">
@@ -386,7 +438,11 @@ function App() {
             </div>
           </div>
           <div className="">
-            <div data-aos="zoom-in" data-aos-delay="300" className="w-full h-full">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              className="w-full h-full"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.08080617724!2d106.71967667579487!3d-6.28392946198547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1ec2422b0b3%3A0x39a0d0fe47404d02!2sSouth%20Jakarta%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1694742006522!5m2!1sen!2sid"
                 className="h-[300px] lg:h-full w-full lg:w-[600px] border-none"

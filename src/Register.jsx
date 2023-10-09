@@ -1,5 +1,6 @@
 import { ButtonPrimary } from "./components/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -21,12 +22,12 @@ function Register() {
 
             <p className="text-center text-[14px]">
               Sudah punya akun?
-              <a
-                href="login.html"
+              <Link
+                to="/login"
                 className="ml-1 hover:underline text-brand font-medium"
               >
                 Masuk
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -74,9 +75,11 @@ function Register() {
                 className="absolute right-2 top-2 h-6 w-6 text-gray-600"
                 onClick={togglePasswordVisibility}
               >
-                {passwordVisible ? 
-                 <img src="/src/assets/eye-slash.svg" alt="Eye"/> : <img src="/src/assets/eye.svg" alt="Eye"/>
-                }
+                {passwordVisible ? (
+                  <img src="/src/assets/eye-slash.svg" alt="Eye" />
+                ) : (
+                  <img src="/src/assets/eye.svg" alt="Eye" />
+                )}
               </button>
             </div>
             <div>
