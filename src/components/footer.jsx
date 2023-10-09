@@ -16,10 +16,10 @@ export function Footer() {
         <div className="flex gap-[80px]">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold">Product</h1>
-          <p className="text-sm text-gray-700">Smartwatch</p>
-          <p className="text-sm text-gray-700">Earphone</p>
-          <p className="text-sm text-gray-700">Headphone</p>
-          <p className="text-sm text-gray-700">Keyboard</p>
+          <p className="text-sm text-gray-700">Smartwatch X1</p>
+          <p className="text-sm text-gray-700">Smartwatch Neo3</p>
+          <p className="text-sm text-gray-700">SmartWatch X2</p>
+          <p className="text-sm text-gray-700">Smartwatch Pro</p>
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold">About</h1>
@@ -29,7 +29,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold">Follow Us</h1>
-          <div className="flex gap-4">
+          <div className="flex gap-4 text-brand">
           <i className="lni lni-facebook-original"></i>
         <i className="lni lni-instagram-original"></i>
         <i className="lni lni-twitter-original"></i>
