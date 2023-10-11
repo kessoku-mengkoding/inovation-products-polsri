@@ -1,5 +1,6 @@
 import { ButtonPrimary } from "./components/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,12 +18,12 @@ function Login() {
 
             <p className="text-center text-[14px]">
               Belum punya akun?
-              <a
-                href="login.html"
+              <Link
+                to="/register"
                 className="ml-1 hover:underline text-brand font-medium"
               >
                 Daftar
-              </a>
+              </Link>
             </p>
           </div>
 

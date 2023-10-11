@@ -3,9 +3,8 @@ import { ButtonSecondaryS } from "./Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 export function Navbar() {
-  const [scrolled,setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -14,9 +13,9 @@ export function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -128,7 +127,7 @@ export function NavbarSecondary() {
       </div>
     </nav>
 
-    <div
+      <div
         className={`transition-all duration-300 ${
           isSearchOpen ? ' top-[85px]' : 'top-[-65px]'
         } fixed  right-[80px] h-max w-[500px] p-4 bg-white border z-[6]  rounded-[4px] shadow-lg`}
@@ -148,8 +147,7 @@ export function NavbarSecondary() {
             <i className="lni lni-close"></i>
           </button>
         </div>
-
       </div>
     </>
-  )
+  );
 }
