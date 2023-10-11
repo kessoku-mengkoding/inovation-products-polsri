@@ -29,32 +29,50 @@ export function Navbar() {
 
   return (
     <>
-   
-    <nav className={`transition-all duration-300 z-[7] fixed top-0 left-0 w-full px-[80px] bg-white flex justify-between items-center ${scrolled ? 'py-[15px] shadow-lg' : 'py-[20px]'}`}>
-      <div className="flex items-center gap-2">
-        <img src="./src/assets/logo.png" alt="logo" className="w-[26px] h-[26px] object-contain"/>
-        <h4 className="text-2xl text-brand tracking-[2px]">Techio</h4>
-      </div>
-      <div className="flex gap-4 items-center nav-link">
-        <a href="#" className="uppercase relative text-sm">Home</a>
-        <a href="#product" className="uppercase relative text-sm">Product</a>
-        <a href="#about" className="uppercase relative text-sm">About</a>
-      </div>
-      <div className="flex gap-4 text-lg items-center">
-      <i 
-       onClick={toggleSearch}
-      className="lni lni-search-alt cursor-pointer hover:text-brand"></i>
-      <i className="lni lni-cart-full cursor-pointer hover:text-brand"></i>
-      
-      <ButtonSecondaryS>
-        Login
-      </ButtonSecondaryS>
-      </div>
-    </nav>
+      <nav
+        className={`transition-all duration-300 z-[7] fixed top-0 left-0 w-full px-[80px] bg-white flex justify-between items-center ${
+          scrolled ? "py-[15px] shadow-lg" : "py-[20px]"
+        }`}
+      >
+        <a href="#">
+          <div className="flex items-center gap-2">
+            <img
+              src="./src/assets/logo.png"
+              alt="logo"
+              className="w-[26px] h-[26px] object-contain"
+            />
+            <h4 className="text-2xl text-brand tracking-[2px]">Techio</h4>
+          </div>
+        </a>
+        <div className="flex gap-4 items-center nav-link">
+          <a href="#" className="uppercase relative text-sm">
+            Home
+          </a>
+          <a href="#product" className="uppercase relative text-sm">
+            Product
+          </a>
+          <a href="#about" className="uppercase relative text-sm">
+            About
+          </a>
+        </div>
+        <div className="flex gap-4 text-lg items-center">
+          <i
+            onClick={toggleSearch}
+            className="lni lni-search-alt cursor-pointer hover:text-brand"
+          ></i>
+          <Link to="/cart" className="flex">
+            <i className="lni lni-cart-full cursor-pointer hover:text-brand"></i>
+          </Link>
 
-    <div
+          <Link to="/login">
+            <ButtonSecondaryS>Login</ButtonSecondaryS>
+          </Link>
+        </div>
+      </nav>
+
+      <div
         className={`transition-all duration-300 ${
-          isSearchOpen ? ' top-[85px]' : 'top-[-65px]'
+          isSearchOpen ? " top-[85px]" : "top-[-65px]"
         } fixed  right-[80px] h-max w-[500px] p-4 bg-white border z-[6]  rounded-[4px] shadow-lg`}
       >
         <div className="flex items-end justify-between flex-col-reverse gap-4">
@@ -72,14 +90,13 @@ export function Navbar() {
             <i className="lni lni-close"></i>
           </button>
         </div>
-
       </div>
     </>
-  )
+  );
 }
 
 export function NavbarSecondary() {
-  const [scrolled,setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -88,9 +105,9 @@ export function NavbarSecondary() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -104,32 +121,50 @@ export function NavbarSecondary() {
 
   return (
     <>
-   
-    <nav className={`transition-all duration-300 z-[7] fixed top-0 left-0 w-full px-[80px] bg-white flex justify-between items-center border-b  ${scrolled ? 'py-[15px] shadow-lg' : 'py-[20px]'}`}>
-      <div className="flex items-center gap-2">
-        <img src="./src/assets/logo.png" alt="logo" className="w-[26px] h-[26px] object-contain"/>
-        <h4 className="text-2xl text-brand tracking-[2px]">Techio</h4>
-      </div>
-      <div className="flex gap-4 items-center nav-link">
-        <a href="#" className="uppercase relative text-sm">Home</a>
-        <a href="#" className="uppercase relative text-sm">Product</a>
-        <a href="#" className="uppercase relative text-sm">About</a>
-      </div>
-      <div className="flex gap-4 text-lg items-center">
-      <i 
-       onClick={toggleSearch}
-      className="lni lni-search-alt cursor-pointer hover:text-brand"></i>
-      <i className="lni lni-cart-full cursor-pointer hover:text-brand"></i>
-      
-      <ButtonSecondaryS>
-        Login
-      </ButtonSecondaryS>
-      </div>
-    </nav>
+      <nav
+        className={`transition-all duration-300 z-[7] fixed top-0 left-0 w-full px-[80px] bg-white flex justify-between items-center border-b  ${
+          scrolled ? "py-[15px] shadow-lg" : "py-[20px]"
+        }`}
+      >
+        <Link to="/">
+          <div className="flex items-center gap-2">
+            <img
+              src="./src/assets/logo.png"
+              alt="logo"
+              className="w-[26px] h-[26px] object-contain"
+            />
+            <h4 className="text-2xl text-brand tracking-[2px]">Techio</h4>
+          </div>
+        </Link>
+        <div className="flex gap-4 items-center nav-link">
+          <a href="/" className="uppercase relative text-sm">
+            Home
+          </a>
+          <a href="/products" className="uppercase relative text-sm">
+            Product
+          </a>
+          <a href="/about" className="uppercase relative text-sm">
+            About
+          </a>
+        </div>
+        <div className="flex gap-4 text-lg items-center">
+          <i
+            onClick={toggleSearch}
+            className="lni lni-search-alt cursor-pointer hover:text-brand"
+          ></i>
+          <Link to="/cart" className="flex">
+            <i className="lni lni-cart-full cursor-pointer hover:text-brand"></i>
+          </Link>
+
+          <Link to="/login">
+            <ButtonSecondaryS>Login</ButtonSecondaryS>
+          </Link>
+        </div>
+      </nav>
 
       <div
         className={`transition-all duration-300 ${
-          isSearchOpen ? ' top-[85px]' : 'top-[-65px]'
+          isSearchOpen ? " top-[85px]" : "top-[-65px]"
         } fixed  right-[80px] h-max w-[500px] p-4 bg-white border z-[6]  rounded-[4px] shadow-lg`}
       >
         <div className="flex items-end justify-between flex-col-reverse gap-4">

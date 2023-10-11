@@ -83,9 +83,11 @@ function Register() {
               </button>
             </div>
             <div>
-              <div className="flex flex-col gap-4 w-full mt-1">
-                <ButtonPrimary>Daftar</ButtonPrimary>
-              </div>
+              <Link to="/">
+                <div className="flex flex-col gap-4 w-full mt-1">
+                  <ButtonPrimary>Daftar</ButtonPrimary>
+                </div>
+              </Link>
               <p className="text-xs text-center w-[300px] lg:w-[400px] mt-2">
                 Dengan mendaftar, saya menyetujui Syarat dan Ketentuan serta
                 Kebijakan Privasi

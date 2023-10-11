@@ -1,6 +1,7 @@
 import { ButtonPrimary, ButtonSecondary } from "./components/Button";
 import { NavbarSecondary } from "./components/Navbar";
 import { Footer } from "./components/footer";
+import { Link } from "react-router-dom";
 
 function Cart() {
   return (
@@ -124,9 +125,9 @@ function Cart() {
                 <p className="text-brand">1.299.998</p>
               </div>
 
-              <ButtonPrimary>
-                Konfirmasi
-              </ButtonPrimary>
+              <Link to="/payment">
+                <ButtonPrimary>Konfirmasi</ButtonPrimary>
+              </Link>
             </div>
           </div>
         </div>

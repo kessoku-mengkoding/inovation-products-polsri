@@ -1,6 +1,7 @@
 import { NavbarSecondary } from "./components/Navbar";
 import { useState } from "react";
 import { Footer } from "./components/footer";
+import { Link } from "react-router-dom";
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -180,9 +181,11 @@ function Product() {
             potensi Anda.
           </p>
         <div className="flex gap-3 items-center">
+        <Link to="/cart">
           <ButtonPrimary>
               Tambah Ke keranjang
           </ButtonPrimary>
+        </Link>
           {/* share */}
             <button className="text-base text-brand border shadow-md border-brand py-[7px] px-2 rounded-[4px] hover:shadow-none focus:outline-none">
               <i className="lni lni-share"></i>

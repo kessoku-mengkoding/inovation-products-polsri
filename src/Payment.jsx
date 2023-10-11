@@ -1,24 +1,39 @@
 import { ButtonPrimary } from "./components/Button";
 import { NavbarSecondary } from "./components/Navbar";
 import { Footer } from "./components/footer";
+import { Link } from "react-router-dom";
 
 import { useState, useRef } from "react";
 
 const PaymentSelect = () => {
   const paymentOptions = [
-    { value: 'gopay', label: 'Gopay', image: '/src/assets/pembayaran/gopay.png' },
-    { value: 'kredivo', label: 'Kredivo', image: '/src/assets/pembayaran/kredivo.png' },
-    { value: 'bca', label: 'BCA', image: '/src/assets/pembayaran/bca.png' },
-    { value: 'bni', label: 'BNI', image: '/src/assets/pembayaran/bni.png' },
-    { value: 'mandiri', label: 'Mandiri', image: '/src/assets/pembayaran/mandiri.png' },
-    { value: 'visa', label: 'Visa', image: '/src/assets/pembayaran/visa.png' },
+    {
+      value: "gopay",
+      label: "Gopay",
+      image: "/src/assets/pembayaran/gopay.png",
+    },
+    {
+      value: "kredivo",
+      label: "Kredivo",
+      image: "/src/assets/pembayaran/kredivo.png",
+    },
+    { value: "bca", label: "BCA", image: "/src/assets/pembayaran/bca.png" },
+    { value: "bni", label: "BNI", image: "/src/assets/pembayaran/bni.png" },
+    {
+      value: "mandiri",
+      label: "Mandiri",
+      image: "/src/assets/pembayaran/mandiri.png",
+    },
+    { value: "visa", label: "Visa", image: "/src/assets/pembayaran/visa.png" },
   ];
 
   const [selectedPayment, setSelectedPayment] = useState(paymentOptions[0]);
 
   const handlePaymentChange = (event) => {
     const selectedValue = event.target.value;
-    const selectedOption = paymentOptions.find((option) => option.value === selectedValue);
+    const selectedOption = paymentOptions.find(
+      (option) => option.value === selectedValue
+    );
     setSelectedPayment(selectedOption);
   };
 
@@ -46,11 +61,17 @@ const PaymentSelect = () => {
   );
 };
 
-
 function Payment() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalSuccess, setIsModalSuccess] = useState(false);
-  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+  const inputRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
 
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
@@ -58,16 +79,13 @@ function Payment() {
 
   const successModalToggle = () => {
     setIsModalSuccess(!isModalSuccess);
-  }
+  };
 
   const handleConfirm = () => {
- 
     setIsModalSuccess(true);
 
     setIsModalVisible(false);
   };
-
-
 
   const handleInputChange = (index, e) => {
     if (e.target.value && index < 5) {
@@ -80,62 +98,73 @@ function Payment() {
       <NavbarSecondary />
 
       {/* ModalSuccess Payment */}
-      <div className={`fixed left-0 top-0 z-[80] px-4 lg:px-100 bg-gray-800 flex justify-center items-center bg-opacity-20 w-screen h-screen transition-all duration-300 ${isModalSuccess ? 'scale-100 opacity-100' : 'scale-0 opacity-0'} `}>
-          <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
-            <div className="absolute top-5 right-5 text-xl">
-              <button onClick={successModalToggle}>
-                <i className="lni lni-close"></i>
-              </button>
-            </div>
-            <div className="flex flex-col items-center gap-6">
-              <h4 className="text-xl font-semibold">Pembayaran Berhasil</h4>
-              <div className="flex gap-3 flex-col text-center max-w-[450px]">
-                <i className="lni lni-checkmark-circle text-green-500 text-[100px]"></i>
-                <p>Terima kasih telah melakukan pembayaran, pesanan anda akan segera kami proses.</p>
-                <div className="flex w-full flex-col" onClick={successModalToggle}>
-                  <ButtonPrimary>Selesai</ButtonPrimary>
-                </div>
+      <div
+        className={`fixed left-0 top-0 z-[80] px-4 lg:px-100 bg-gray-800 flex justify-center items-center bg-opacity-20 w-screen h-screen transition-all duration-300 ${
+          isModalSuccess ? "scale-100 opacity-100" : "scale-0 opacity-0"
+        } `}
+      >
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
+          <div className="absolute top-5 right-5 text-xl">
+            <button onClick={successModalToggle}>
+              <i className="lni lni-close"></i>
+            </button>
+          </div>
+          <div className="flex flex-col items-center gap-6">
+            <h4 className="text-xl font-semibold">Pembayaran Berhasil</h4>
+            <div className="flex gap-3 flex-col text-center max-w-[450px]">
+              <i className="lni lni-checkmark-circle text-green-500 text-[100px]"></i>
+              <p>
+                Terima kasih telah melakukan pembayaran, pesanan anda akan
+                segera kami proses.
+              </p>
+              <div
+                className="flex w-full flex-col"
+                onClick={successModalToggle}
+              >
+                <ButtonPrimary>Selesai</ButtonPrimary>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-      
-        <div className={`fixed left-0 top-0 z-50 px-4 lg:px-100 bg-gray-800 flex justify-center items-center bg-opacity-20 w-screen h-screen transition-all duration-300 ${isModalVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'} `}>
-          <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
-            <div className="absolute top-5 right-5 text-xl">
-              <button onClick={toggleModal}>
-                <i className="lni lni-close"></i>
-              </button>
-            </div>
-            <div className="flex flex-col items-center gap-6">
-              <h4 className="text-xl font-semibold">Konfirmasi Pembayaran</h4>
-              <div className="flex gap-3 flex-col text-center">
-                Masukan token anda
-                <div className="space-x-2 token mb-2">
-                  {inputRefs.map((ref, index) => (
-                    <input
-                      key={index}
-                      type="text"
-                      placeholder="0"
-                      className="w-10 h-10 px-3 py-2 text-center border border-second focus:outline-none focus:border-brand"
-                      maxLength="1"
-                      ref={ref}
-                      onChange={(e) => handleInputChange(index, e)}
-                    />
-                  ))}
-                </div>
-                <div onClick={handleConfirm} className="flex flex-col">
-
-                <ButtonPrimary >
-                  Konfirmasi
-                </ButtonPrimary>
-                </div>
+      <div
+        className={`fixed left-0 top-0 z-50 px-4 lg:px-100 bg-gray-800 flex justify-center items-center bg-opacity-20 w-screen h-screen transition-all duration-300 ${
+          isModalVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
+        } `}
+      >
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
+          <div className="absolute top-5 right-5 text-xl">
+            <button onClick={toggleModal}>
+              <i className="lni lni-close"></i>
+            </button>
+          </div>
+          <div className="flex flex-col items-center gap-6">
+            <h4 className="text-xl font-semibold">Konfirmasi Pembayaran</h4>
+            <div className="flex gap-3 flex-col text-center">
+              Masukan token anda
+              <div className="space-x-2 token mb-2">
+                {inputRefs.map((ref, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    placeholder="0"
+                    className="w-10 h-10 px-3 py-2 text-center border border-second focus:outline-none focus:border-brand"
+                    maxLength="1"
+                    ref={ref}
+                    onChange={(e) => handleInputChange(index, e)}
+                  />
+                ))}
+              </div>
+              <div onClick={handleConfirm} className="flex flex-col">
+                <Link to="/">
+                  <ButtonPrimary>Konfirmasi</ButtonPrimary>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-    
+      </div>
 
       <section className="mt-[100px] px-[80px]">
         <h3 className="text-2xl font-semibold">Checkout Pesananmu</h3>
@@ -270,7 +299,7 @@ function Payment() {
               <div className="flex items-center justify-between">
                 <p>Metode Pembayaran</p>
                 <div>
-                 <PaymentSelect />
+                  <PaymentSelect />
                 </div>
               </div>
               <div className="flex w-full flex-col" onClick={toggleModal}>

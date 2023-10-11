@@ -15,8 +15,6 @@ AOS.init();
 
 import testimoniData from "./testimoni.json";
 
-
-
 function App() {
   const [products, setProducts] = useState([]);
   const [testimoni, setTestimoni] = useState([]);
@@ -208,38 +206,44 @@ function App() {
                 (currentIndex + 1) * itemsPerPage
               )
               .map((product) => (
-                <div
-                  data-aos="zoom-in"
-                  data-aos-delay={`${product.id * 100}`}
-                  key={product.id}
-                >
-                  <div className="w-full h-full rounded-sm shadow-xl">
-                    <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="h-[291px] m-auto object-position"
-                      />
-                    </div>
-                    <div className="p-[20px] flex flex-col gap-[10px] items-center">
-                      <h3 className="text-xl font-semibold">{product.name}</h3>
-                      <h3 className="text-xl font-semibold text-brand">
-                        {product.price}
-                      </h3>
-                      <div className="flex gap-2 mb-2">
-                        {Array.from({ length: Math.floor(product.rating) }).map(
-                          (_, index) => (
+                <Link to="/product">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay={`${product.id * 100}`}
+                    key={product.id}
+                  >
+                    <div className="w-full h-full rounded-sm shadow-xl">
+                      <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="h-[291px] m-auto object-position"
+                        />
+                      </div>
+                      <div className="p-[20px] flex flex-col gap-[10px] items-center">
+                        <h3 className="text-xl font-semibold">
+                          {product.name}
+                        </h3>
+                        <h3 className="text-xl font-semibold text-brand">
+                          {product.price}
+                        </h3>
+                        <div className="flex gap-2 mb-2">
+                          {Array.from({
+                            length: Math.floor(product.rating),
+                          }).map((_, index) => (
                             <i
                               key={index}
                               className="lni lni-star-fill text-yellow-500"
                             ></i>
-                          )
-                        )}
+                          ))}
+                        </div>
+                        <Link to="/cart">
+                          <ButtonPrimary>Tambah ke keranjang</ButtonPrimary>
+                        </Link>
                       </div>
-                      <ButtonPrimary>Tambah ke keranjang</ButtonPrimary>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
           </div>
           <div className="flex gap-2 justify-center mt-[40px]">
@@ -256,7 +260,9 @@ function App() {
             ))}
           </div>
           <div className="mt-[60px] mx-auto w-max">
-            <ButtonSecondary>Lihat selengkapnya</ButtonSecondary>
+            <Link to="/products">
+              <ButtonSecondary>Lihat selengkapnya</ButtonSecondary>
+            </Link>
           </div>
         </section>
         {/* Testimonial */}
@@ -361,9 +367,11 @@ function App() {
                   berkomitmen untuk memberikan nilai tambah kepada pengguna
                   dengan setiap produk yang kami hasilkan.
                 </p>
-                <ButtonPrimary className="w-max">
-                  Baca selengkapnya
-                </ButtonPrimary>
+                <Link to="/about">
+                  <ButtonPrimary className="w-max">
+                    Baca selengkapnya
+                  </ButtonPrimary>
+                </Link>
               </div>
             </div>
           </div>
@@ -391,7 +399,6 @@ function App() {
             </div>
           </section>
         </div>
- 
       </main>
       <Footer />
     </>
