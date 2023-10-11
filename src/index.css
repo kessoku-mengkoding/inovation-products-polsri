@@ -33,9 +33,10 @@ html,body {
   transform: translateX(-50%);
 }
 
-.nav-link a:hover::after {
+.nav-link a:hover::after, .nav-link.active a::after{
   width: 50%;
 }
+
 
 .primaryButton:before{
 	position:absolute;
@@ -67,4 +68,8 @@ html,body {
 
 .secondaryButton:hover:before{
 	transform:scaleX(1);
+}
+
+.active-slide {
+	@apply border border-brand;
 }

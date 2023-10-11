@@ -11,7 +11,7 @@ function Register() {
 
   return (
     <>
-      <section className="flex justify-center items-center py-[40px] px-[80px] gap-[80px]">
+      <section className="flex justify-center items-center py-[80px] px-[80px] gap-[80px]">
         <div>
           <img src="/src/assets/onlineshop.svg" alt="onlinshop" />
         </div>
