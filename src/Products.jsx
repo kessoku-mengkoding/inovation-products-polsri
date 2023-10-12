@@ -47,7 +47,7 @@ function Products() {
           </div>
         </div>
 
-      <section className="flex px-4 lg:px-[80px] justify-between gap-[20px] mt-[120px]">
+      <section className="flex px-4 lg:px-[80px] justify-between gap-[20px] mt-[120px] max-w-[1360px] mx-auto">
         <div className="lg:block hidden w-[250px]">
           <h4 className="text-xl font-semibold mt-3">Filter</h4>
           <div className="flex flex-col gap-4 mt-8">

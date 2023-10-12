@@ -7,7 +7,7 @@ function Cart() {
   return (
     <>
       <NavbarSecondary />
-      <section className="flex flex-col lg:flex-row mt-[100px] gap-[20px] lg:gap-[60px] px-4 lg:px-[80px]">
+      <section className="flex flex-col lg:flex-row mt-[100px] gap-[20px] lg:gap-[60px] px-4 lg:px-[80px] max-w-[1360px] mx-auto">
         <div className="min-w-full max-w-full lg:min-w-[725px] lg:max-w-[725px]">
           <h3 className="text-2xl font-semibold mb-4">Keranjang Belanja</h3>
           {/* list */}

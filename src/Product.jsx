@@ -90,7 +90,7 @@ function Product() {
     <>
       <NavbarSecondary />
       <ScrollToTopButton />
-      <section className="flex flex-col lg:flex-row gap-[40px] px-4 lg:px-[80px] mt-[120px]">
+      <section className="flex flex-col lg:flex-row gap-[40px] px-4 lg:px-[80px] mt-[120px] max-w-[1360px] mx-auto">
         <div className="lg:min-w-[550px] lg:max-w-[500px]">
           <div ref={sliderRef} className="keen-slider mb-4 w-full">
             <div className="keen-slider__slide flex justify-center items-center w-full bg-brand bg-opacity-10 ">
@@ -198,7 +198,7 @@ function Product() {
         {/* Ulasan Produk */}
 
       </section>
-      <section className="px-4 lg:px-[80px] mt-[80px] lg:mt-[100px]">
+      <section className="px-4 lg:px-[80px] mt-[80px] lg:mt-[100px] max-w-[1360px] mx-auto">
         <div
           className="flex flex-col lg:flex-row gap-[10px] lg:gap-[20px] items-start"
         >

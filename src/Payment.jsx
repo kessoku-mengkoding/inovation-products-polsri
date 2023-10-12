@@ -166,7 +166,7 @@ function Payment() {
         </div>
       </div>
 
-      <section className="mt-[100px] px-4 lg:px-[80px]">
+      <section className="mt-[100px] px-4 lg:px-[80px] max-w-[1360px] mx-auto">
         <h3 className="text-2xl font-semibold">Checkout Pesananmu</h3>
         <div className="flex flex-col lg:flex-row gap-[80px] lg:gap-[40px] justify-between mt-6">
           <div className="flex flex-col gap-5 w-full lg:w-[600px]">

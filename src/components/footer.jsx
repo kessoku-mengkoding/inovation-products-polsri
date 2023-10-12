@@ -1,8 +1,8 @@
 export function Footer() {
   return(
     <>
-    <footer className="flex flex-col px-4 lg:px-[80px]  items-center justify-center py-10 bg-brand bg-opacity-10 mt-[80px] ">
-      <div className="flex flex-col lg:flex-row justify-between w-full gap-10">
+    <footer className="flex flex-col px-4 lg:px-[80px] items-center justify-center py-10 bg-brand bg-opacity-10 mt-[80px] ">
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-10 max-w-[1200px] mx-auto">
         <div className="flex flex-col gap-2">
           <h1 className="text-xl lg:text-2xl font-semibold">Techio</h1>
           <p className="text-sm text-gray-700">Jl. Raya Bogor KM 26, Jakarta Timur</p>

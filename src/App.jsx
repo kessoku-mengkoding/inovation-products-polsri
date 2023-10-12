@@ -53,7 +53,7 @@ function App() {
     <>
       <Navbar />
       <ScrollToTopButton />
-      <section className="w-full mt-[120px] gap-[80px] sm:gap-0 sm:mt-0 h-screen flex flex-col-reverse lg:flex-row px-4 lg:px-[80px] items-center justify-between ">
+      <section className="w-full mt-[120px] gap-[80px] sm:gap-0 sm:mt-0 h-screen flex flex-col-reverse lg:flex-row px-4 lg:px-[80px] items-center justify-between max-w-[1360px] mx-auto">
         <div data-aos="fade-right">
           <div className="max-w-full lg:max-w-[584px]">
             <p className="text-brand text-sm font-medium mb-4">
@@ -85,7 +85,7 @@ function App() {
           <div className="absolute top-[110px] left-[40px] w-[150px] h-[150px] lg:w-[240px] lg:h-[240px] bg-brand bg-opacity-60 rounded-full overflow-hidden blur-[100px] "></div>
         </div>
       </section>
-      <main className="flex flex-col gap-[150px] lg:gap-[200px] mt-[150px] lg:pt-0 py-[40px] lg:py-[20px] px-4 lg:px-[80px] overflow-x-hidden">
+      <main className="flex flex-col gap-[150px] lg:gap-[200px] mt-[150px] lg:pt-0 py-[40px] lg:py-[20px] px-4 lg:px-[80px] overflow-x-hidden max-w-[1360px] mx-auto">
         {/* Promo */}
         <div data-aos="zoom-in">
           <section className="flex lg:flex-row flex-col">
