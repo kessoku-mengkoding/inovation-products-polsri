@@ -110,19 +110,19 @@ function Cart() {
             <div className="flex flex-col mt-4 gap-3">
               <div className="flex justify-between items-center">
                 <p className="text-second">Total Harga (2 Produk)</p>
-                <p className="text-brand">1.299.998</p>
+                <p className="font-semibold">1.299.998</p>
               </div>
               <div className="flex justify-between items-center">
                 <p className="text-second">Ongkos Kirim</p>
-                <p className="text-brand">Rp 0</p>
+                <p className="font-semibold">Rp 0</p>
               </div>
               <div className="flex justify-between items-center">
                 <p className="text-second">Total Diskon</p>
-                <p className="text-brand">Rp 0</p>
+                <p className="font-semibold">Rp 0</p>
               </div>
               <div className="flex justify-between items-center border-t border-gray-300 pt-4">
                 <p className="text-second">Total Bayar</p>
-                <p className="text-brand">1.299.998</p>
+                <p className="font-semibold">1.299.998</p>
               </div>
 
               <Link to="/payment" className="flex flex-col">

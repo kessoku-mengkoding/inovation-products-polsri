@@ -103,7 +103,7 @@ function Payment() {
           isModalSuccess ? "scale-100 opacity-100" : "scale-0 opacity-0"
         } `}
       >
-        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[60pz] lg:pt-0 py-[40px] shadow-md border border-gray-200">
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[60px]  py-[40px] shadow-md border border-gray-200">
           <div className="absolute top-5 right-5 text-xl">
             <button onClick={successModalToggle}>
               <i className="lni lni-close"></i>
@@ -135,7 +135,7 @@ function Payment() {
           isModalVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
         } `}
       >
-        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[70px] lg:pt-0 py-[40px] shadow-md border border-gray-200">
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[70px]  py-[40px] shadow-md border border-gray-200">
           <div className="absolute top-5 right-5 text-xl">
             <button onClick={toggleModal}>
               <i className="lni lni-close"></i>
