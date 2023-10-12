@@ -15,7 +15,7 @@ function Products() {
   }
 
   useEffect(() => {
-    fetch("https://techio-ternak-skp.netlify.app/products.json")
+    fetch("https://techio-ternakskp-data.netlify.app/products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
