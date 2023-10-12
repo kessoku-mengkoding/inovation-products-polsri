@@ -7,8 +7,8 @@ function About() {
     <>
       <NavbarSecondary />
 
-      <section className="px-[80px] mt-[120px]">
-        <div className="flex justify-between gap-[60px] ">
+      <section className="px-4 lg:px-[80px] mt-[120px]">
+        <div className="flex flex-col lg:flex-row justify-between gap-[60px] ">
           <div
             data-aos="zoom-in"
           >
@@ -27,7 +27,7 @@ function About() {
             <h2 className="text-[32px] font-semibold mb-6 max-w-[500px] leading-[150%]">
               Alexandro Fuado
             </h2>
-            <p className="text-base mb-8 max-w-[580px]">
+            <p className="text-sm lg:text-base mb-8 max-w-[580px]">
               Saya adalah pemilik dan pengembang utama produk ini. Dengan
               semangat dan dedikasi untuk menghadirkan teknologi terbaru ke
               tangan Anda, saya dan tim kami telah merancang dan mengembangkan
@@ -49,10 +49,10 @@ function About() {
                {/* Contact */}
                <section
           id="contact"
-          className="flex flex-col-reverse lg:flex-row h-max gap-[60px] justify-between mt-[80px]"
+          className="flex flex-col lg:flex-row h-max gap-[20px] lg:gap-[60px] justify-between mt-[80px]"
         >
           <div data-aos="fade-right">
-            <div className=" py-5 lg:py-[40px] w-full flex flex-col gap-5">
+            <div className="py-[30px] lg:py-[40px] w-full flex flex-col gap-5">
               <div>
                 <h1 className="text-4xl font-semibold mb-2">Hubungi Saya</h1>
                 <p>

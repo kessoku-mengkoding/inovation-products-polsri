@@ -45,7 +45,7 @@ const PaymentSelect = () => {
         className="block appearance-none w-full border border-gray-200 rounded-[4px] py-2 px-3 pr-16 bg-white focus:outline-none focus:border-brand cursor-pointer"
       >
         {paymentOptions.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={option.value} value={option.value} className="text-sm">
             {option.label}
           </option>
         ))}
@@ -103,17 +103,17 @@ function Payment() {
           isModalSuccess ? "scale-100 opacity-100" : "scale-0 opacity-0"
         } `}
       >
-        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[60pz] lg:pt-0 py-[40px] shadow-md border border-gray-200">
           <div className="absolute top-5 right-5 text-xl">
             <button onClick={successModalToggle}>
               <i className="lni lni-close"></i>
             </button>
           </div>
-          <div className="flex flex-col items-center gap-6">
-            <h4 className="text-xl font-semibold">Pembayaran Berhasil</h4>
+          <div className="flex flex-col items-center gap-3">
+             <i className="lni lni-checkmark-circle mb-2 text-green-500 text-[60px] lg:text-[100px]"></i>
             <div className="flex gap-3 flex-col text-center max-w-[450px]">
-              <i className="lni lni-checkmark-circle text-green-500 text-[100px]"></i>
-              <p>
+            <h4 className="text-xl font-semibold">Pembayaran Berhasil</h4>
+              <p className="text-xs lg:text-base mb-1">
                 Terima kasih telah melakukan pembayaran, pesanan anda akan
                 segera kami proses.
               </p>
@@ -121,7 +121,9 @@ function Payment() {
                 className="flex w-full flex-col"
                 onClick={successModalToggle}
               >
+                <Link to="/">
                 <ButtonPrimary>Selesai</ButtonPrimary>
+                </Link>
               </div>
             </div>
           </div>
@@ -133,7 +135,7 @@ function Payment() {
           isModalVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
         } `}
       >
-        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 py-[25px] lg:py-[40px] shadow-md border border-gray-200">
+        <div className="relative bg-white w-full rounded-[4px] lg:min-w-[800px] lg:max-w-[800px] flex items-center justify-center px-4 lg:px-0 pt-[70px] lg:pt-0 py-[40px] shadow-md border border-gray-200">
           <div className="absolute top-5 right-5 text-xl">
             <button onClick={toggleModal}>
               <i className="lni lni-close"></i>
@@ -157,18 +159,16 @@ function Payment() {
                 ))}
               </div>
               <div onClick={handleConfirm} className="flex flex-col">
-                <Link to="/">
-                  <ButtonPrimary>Konfirmasi</ButtonPrimary>
-                </Link>
+                <ButtonPrimary>Konfirmasi</ButtonPrimary>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <section className="mt-[100px] px-[80px]">
+      <section className="mt-[100px] px-4 lg:px-[80px]">
         <h3 className="text-2xl font-semibold">Checkout Pesananmu</h3>
-        <div className="flex flex-col lg:flex-row gap-[40px] justify-between mt-6">
+        <div className="flex flex-col lg:flex-row gap-[80px] lg:gap-[40px] justify-between mt-6">
           <div className="flex flex-col gap-5 w-full lg:w-[600px]">
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="text" className="text-[14px]">
@@ -250,7 +250,7 @@ function Payment() {
             </div>
           </div>
           <div className="w-full lg:w-[500px]">
-            <div className="border border-gray-200 p-[20px] w-full flex flex-col gap-5">
+            <div className="lg:border border-gray-200 lg:p-[20px] w-full flex flex-col gap-5">
               <p className="text-xl font-semibold mb-1">Ringkasan Belanja</p>
 
               <div className="flex flex-col gap-3 w-full">

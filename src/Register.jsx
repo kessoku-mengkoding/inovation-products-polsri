@@ -12,11 +12,11 @@ function Register() {
 
   return (
     <>
-      <section className="flex justify-center items-center py-[80px] px-[80px] gap-[80px]">
-        <div>
+      <section className="flex justify-center items-center py-[80px] lg:py-[80px] px-4 lg:px-[80px] gap-[80px]">
+        <div className="lg:block hidden">
           <img src="/src/assets/onlineshop.svg" alt="onlinshop" />
         </div>
-        <div className="w-[500px] text-center border shadow-md bg-white rounded-[4px] p-[40px]">
+        <div className="w-full lg:w-[500px] text-center lg:border lg:shadow-md bg-white rounded-[4px] lg:p-[40px]">
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-semibold mb-2">Daftar Sekarang</h3>
 
@@ -88,7 +88,7 @@ function Register() {
                   <ButtonPrimary>Daftar</ButtonPrimary>
                 </div>
               </Link>
-              <p className="text-xs text-center w-[300px] lg:w-[400px] mt-2">
+              <p className="text-xs text-center mx-auto w-[300px] lg:w-[400px] mt-3">
                 Dengan mendaftar, saya menyetujui Syarat dan Ketentuan serta
                 Kebijakan Privasi
               </p>

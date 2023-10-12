@@ -14,6 +14,7 @@ import "aos/dist/aos.css";
 AOS.init();
 
 import testimoniData from "./testimoni.json";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -51,55 +52,56 @@ function App() {
   return (
     <>
       <Navbar />
-      <section className="w-full h-screen flex px-[80px] items-center justify-between ">
+      <ScrollToTopButton />
+      <section className="w-full mt-[120px] gap-[80px] sm:gap-0 sm:mt-0 h-screen flex flex-col-reverse lg:flex-row px-4 lg:px-[80px] items-center justify-between ">
         <div data-aos="fade-right">
-          <div className="max-w-[584px]">
+          <div className="max-w-full lg:max-w-[584px]">
             <p className="text-brand text-sm font-medium mb-4">
               PRODUK TERPOPULER
             </p>
-            <h1 className="text-4xl font-semibold mb-8 leading-[150%]">
+            <h1 className="text-[22px] lg:text-4xl sm:text-left font-semibold mb-8 leading-[150%]">
               <span className="bg-brand bg-opacity-5 text-brand">
                 Menghadirkan Masa Depan
               </span>
               <br />
               Kepada Pergelangan Tangan Anda
             </h1>
-            <p className="max-w-[584px] text-base mb-8">
+            <p className="max-w-full text-left lg:max-w-[584px] text-base mb-8">
               Smartwatch X1 - Masa depan teknologi di pergelangan tangan Anda.
               Tampilan futuristik, fitur cerdas, dan desain elegan dalam satu
               paket.
             </p>
-            <Link to="/products">
+            <Link to="/products" className="flex flex-col sm:flex-row">
               <ButtonPrimary>Lihat produk</ButtonPrimary>
             </Link>
           </div>
         </div>
-        <div className="relative right-[60px] top-0">
+        <div className="relative  lg:right-[60px] top-0">
           <img
             src="/src/assets/hero.png"
             alt="test"
-            className="w-[380px] relative z-[2] animate-customBounce"
+            className="w-[250px] lg:w-[380px] relative mx-auto lg:mx-0 z-[2] animate-customBounce"
           />
-          <div className="absolute top-[110px] left-[40px] w-[240px] h-[240px] bg-brand bg-opacity-60 rounded-full overflow-hidden blur-[100px] "></div>
+          <div className="absolute top-[110px] left-[40px] w-[150px] h-[150px] lg:w-[240px] lg:h-[240px] bg-brand bg-opacity-60 rounded-full overflow-hidden blur-[100px] "></div>
         </div>
       </section>
-      <main className="flex flex-col gap-[200px] py-[20px] px-[80px] overflow-x-hidden">
+      <main className="flex flex-col gap-[150px] lg:gap-[200px] mt-[150px] lg:pt-0 py-[40px] lg:py-[20px] px-4 lg:px-[80px] overflow-x-hidden">
         {/* Promo */}
         <div data-aos="zoom-in">
           <section className="flex lg:flex-row flex-col">
             <img
               src="/src/assets/promo.png"
               alt="diskon"
-              className="w-[750px] max-h-[400px] bg-brand"
+              className="w-full max-h-[360px] lg:w-[750px] lg:max-h-[400px] bg-brand"
             />
             <div className="bg-brand bg-opacity-5 p-[40px] w-full">
               <p className="text-brand text-sm font-medium mb-2">
                 PENGGUNA BARU?{" "}
               </p>
-              <h1 className="text-4xl font-semibold mb-8 max-w-[400px] leading-[150%]">
+              <h1 className="text-2xl lg:text-4xl font-semibold mb-8 max-w-[400px] leading-[150%]">
                 Dapatkan Potongan 15% Sekarang!
               </h1>
-              <p className="text-base mb-8 max-w-[580px]">
+              <p className="text-base mb-8 lg:max-w-[580px]">
                 Dapatkan <b>diskon eksklusif 15%</b> untuk pembelian pertama
                 Anda bersama kami. Jelajahi koleksi produk kami yang luar biasa
                 dan nikmati pengalaman berbelanja yang tak terlupakan.
@@ -112,11 +114,81 @@ function App() {
         </div>
         {/* Fitur */}
         <section>
-          <h1 className="text-4xl font-semibold text-center">
+          <h1 className="text-2xl lg:text-4xl font-semibold text-center">
             Kenali Keunggulan Smartwatch X1
           </h1>
-          <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
-          <div className="flex gap-[40px] mt-[80px] items-center">
+          <span className="w-[200px] lg:w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
+
+          <div className="lg:hidden flex flex-col gap-[40px] mt-[80px] items-center">
+            <img src="/src/assets/fitur.png" alt="produk" className="w-[290px] mx-auto" />
+            <div className="flex flex-col gap-[40px]">
+              <div data-aos="fade-right">
+                <div className="flex gap-[10px]">
+                  <div className="bg-brand rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+                    <i className="lni lni-first-aid"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-1">
+                      Pemantauan Kesehatan
+                    </h3>
+                    <p>
+                      Lacak detak jantung, tingkat aktivitas, dan tidur Anda.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div data-aos="fade-right">
+                <div className="flex gap-[10px]">
+                  <div className="bg-brand rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+                    <i className="lni lni-alarm"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-1">
+                      Notifikasi Terintegrasi
+                    </h3>
+                    <p>
+                      Tetap terhubung dengan pemberitahuan penting langsung di
+                      tangan Anda.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div data-aos="fade-right">
+                <div className="flex gap-[10px]">
+                  <div className="bg-brand rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+                    <i className="lni lni-link"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-1">
+                      Konektivitas Lengkap
+                    </h3>
+                    <p>
+                      Sinkronkan dengan smartphone Anda untuk mengakses
+                      fitur-fitur yang lebih canggih.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div data-aos="fade-right">
+                <div className="flex gap-[10px]">
+                  <div className="bg-brand rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center">
+                    <i className="lni lni-diamond-alt"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-1">
+                      Desain Elegan
+                    </h3>
+                    <p>
+                      Tampilan futuristik dalam rangkaian desain yang elegan dan
+                      nyaman dikenakan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden lg:flex gap-[40px] mt-[80px] items-center">
             <div className="flex flex-col gap-[40px]">
               <div data-aos="fade-right">
                 <div className="flex gap-[10px] justify-end text-right">
@@ -194,12 +266,12 @@ function App() {
           </div>
         </section>
         {/* Showcase */}
-        <section id="product">
-          <h1 className="text-4xl font-semibold text-center">
+        <section id="product" className="pt-[20px]">
+          <h1 className="text-2xl lg:text-4xl font-semibold text-center">
             Koleksi Smartwatch Unggulan Kami
           </h1>
-          <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
-          <div className="grid grid-cols-3 gap-[20px] mt-[80px]">
+          <span className="w-[200px] lg:w-[350px] h-[3px] bg-brand mx-auto mt-4 block"></span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] mt-[80px]">
             {products
               .slice(
                 currentIndex * itemsPerPage,
@@ -210,7 +282,7 @@ function App() {
                   <div
                     data-aos="zoom-in"
                     data-aos-delay={`${product.id * 100}`}
-                    key={product.id}
+                    key={product.name}
                   >
                     <div className="w-full h-full rounded-sm shadow-xl">
                       <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
@@ -267,11 +339,11 @@ function App() {
         </section>
         {/* Testimonial */}
         <section className="relative overflow-hidden">
-          <h1 className="text-4xl font-semibold text-center">
+          <h1 className="text-2xl lg:text-4xl font-semibold text-center">
             Apa yang Pelanggan Katakan tentang Kami
           </h1>
-          <span className="w-[350px] h-[3px] bg-brand mx-auto mt-4 mb-[60px] block"></span>
-          <div className="absolute bottom-0 right-[80px] flex gap-3 z-[3]">
+          <span className="w-[200px] lg:w-[350px] h-[3px] bg-brand mx-auto mt-4 mb-[60px] block"></span>
+          <div className="absolute bottom-0 right-4 lg:right-[80px] flex gap-3 z-[3]">
             <span
               onClick={prevSlide}
               className="shadow-md bg-brand cursor-pointer rounded-full min-w-[36px] h-[36px]  text-white flex justify-center items-center"
@@ -293,8 +365,8 @@ function App() {
               )
               .map((item, index) => (
                 <div key={item.name}>
-                  <div className="flex items-end gap-[80px] w-full">
-                    <div className="relative h-[500px]">
+                  <div className="flex flex-col lg:flex-row items-end gap-[60px] lg:gap-[80px] w-full">
+                    <div className="relative h-[330px] lg:h-[500px] overflow-hidden lg:overflow-visible">
                       <div
                         data-aos-delay={`${index * 100}`}
                         data-aos="zoom-in"
@@ -303,16 +375,16 @@ function App() {
                         <img
                           src={item.image}
                           alt="testi"
-                          className="min-w-[454px] object-contain "
+                          className="min-w-[200px] lg:min-w-[454px] object-contain "
                         />
                       </div>
-                      <span className="bg-brand w-full h-[400px] rounded-tr-[160px] block absolute bottom-0 shadow-lg"></span>
+                      <span className="bg-brand w-full h-[240px] lg:h-[380px] rounded-tl-[160px] lg:rounded-tl-none rounded-tr-[160px]  block absolute bottom-0 shadow-lg"></span>
                     </div>
-                    <div className="flex flex-col gap-[100px] w-auto">
+                    <div className="flex flex-col gap-[15px] lg:gap-[100px] w-auto">
                       <div>
                         <img
                           src="/src/assets/quote.png"
-                          className="w-[56px] mb-6"
+                          className="w-[32px] sm:w-[56px] mb-6"
                           alt="quote"
                         />
                       </div>
@@ -321,15 +393,15 @@ function App() {
                         data-aos-duration="1000"
                         data-aos="fade-left"
                       >
-                        <h4 className="text-xl">{item.testimonial}</h4>
+                        <h4 className="text-base mb-6 lg:mb-0 sm:text-xl">{item.testimonial}</h4>
                       </div>
                       <div
                         data-aos-delay={`${index * 400}`}
                         data-aos="fade-left"
                       >
                         <div>
-                          <p className="font-medium">{item.name}</p>
-                          <p>{item.job}</p>
+                          <p className="font-medium text-sm lg:text-base">{item.name}</p>
+                          <p className="text-sm lg:text-base">{item.job}</p>
                         </div>
                       </div>
                     </div>
@@ -339,7 +411,7 @@ function App() {
           </section>
         </section>
         {/* About */}
-        <section id="about">
+        <section id="about" className="pt-[20px]">
           <div className="flex flex-col lg:flex-row lg:relative">
             <div data-aos="fade-right">
               <img
@@ -392,7 +464,7 @@ function App() {
                 <input
                   type="email"
                   placeholder="Masukan email anda"
-                  className="border border-gray-400 rounded-[4px] placeholder-gray-600 text-second px-4 py-2  bg-transparent focus:outline-none focus:border-brand w-[500px] bg-white"
+                  className="border border-gray-400 rounded-[4px] placeholder-gray-600 text-second px-4 py-2  bg-transparent focus:outline-none focus:border-brand w-full lg:w-[500px] bg-white"
                 />
                 <ButtonPrimary>Berlangganan</ButtonPrimary>
               </div>

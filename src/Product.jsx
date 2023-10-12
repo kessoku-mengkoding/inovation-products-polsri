@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { ButtonPrimary } from "./components/Button";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function ThumbnailPlugin(mainRef) {
   return (slider) => {
@@ -88,8 +89,9 @@ function Product() {
   return (
     <>
       <NavbarSecondary />
-      <section className="flex gap-[40px] px-[80px] mt-[120px]">
-        <div className="min-w-[550px] max-w-[500px]">
+      <ScrollToTopButton />
+      <section className="flex flex-col lg:flex-row gap-[40px] px-4 lg:px-[80px] mt-[120px]">
+        <div className="lg:min-w-[550px] lg:max-w-[500px]">
           <div ref={sliderRef} className="keen-slider mb-4 w-full">
             <div className="keen-slider__slide flex justify-center items-center w-full bg-brand bg-opacity-10 ">
               <img
@@ -152,7 +154,7 @@ function Product() {
           </div>
         </div>
         <div className="w-full">
-          <h3 className="text-2xl font-semibold mb-4">
+          <h3 className="lg:text-2xl text-xl font-semibold mb-4">
             Smartwatch X1 - Penampilan yang Sempurna
           </h3>
           <div className="flex gap-2 items-center mb-4">
@@ -174,7 +176,7 @@ function Product() {
         <p className="mb-4 font-medium">
           Stock Tersisa : 5
         </p>
-          <p className="mb-6">
+          <p className="mb-6 text-justify lg:text-left">
             Smartwatch X1 adalah teman sejati Anda untuk menjalani gaya hidup
             sehat dan digital yang praktis. Dengan desain yang elegan dan
             fitur-fitur canggih, produk ini akan membantu Anda memaksimalkan
@@ -196,7 +198,7 @@ function Product() {
         {/* Ulasan Produk */}
 
       </section>
-      <section className="px-[80px] mt-[100px]">
+      <section className="px-4 lg:px-[80px] mt-[80px] lg:mt-[100px]">
         <div
           className="flex flex-col lg:flex-row gap-[10px] lg:gap-[20px] items-start"
         >

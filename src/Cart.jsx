@@ -7,37 +7,37 @@ function Cart() {
   return (
     <>
       <NavbarSecondary />
-      <section className="flex mt-[100px] gap-[60px] px-[80px]">
-        <div className="min-w-[725px] max-w-[725px]">
+      <section className="flex flex-col lg:flex-row mt-[100px] gap-[20px] lg:gap-[60px] px-4 lg:px-[80px]">
+        <div className="min-w-full max-w-full lg:min-w-[725px] lg:max-w-[725px]">
           <h3 className="text-2xl font-semibold mb-4">Keranjang Belanja</h3>
           {/* list */}
-          <div className="flex flex-col gap-4 justify-between items-center py-2">
-            <div className="flex border border-gray-300 w-full relative rounded-[4px]">
-              <div className="w-[183px] h-[183px] bg-gray-200 mr-2">
+          <div className="flex flex-col gap-4  justify-between items-center py-2">
+            <div className="flex lg:border border-gray-300 w-full relative rounded-[4px]">
+              <div className="lg:w-[183px] w-[115px] h-[140px] lg:h-[183px] bg-gray-200 mr-2">
                 <img
                   src="/src/assets/product/product1.png"
                   alt=""
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-[20px]">
-                <div className="absolute top-[20px] right-[20px]">
+              <div className="p-[10px] lg:p-[20px]">
+                <div className="absolute top-[10px] lg:top-[20px] right-[10px] lg:right-[20px]">
                   <button className="">
                     <i className="lni lni-trash-can text-xl text-red-500"></i>
                   </button>
                 </div>
-                <p className="font-semibold text-xl mb-2">Smartwatch X1</p>
+                <p className="font-semibold text-base lg:text-xl mb-2">Smartwatch X1</p>
                 <p className="font-semibold text-brand mb-2">Rp 399.999</p>
-                <div className="flex items-center gap-2">
+                <div className="flex text-xs lg:text-base items-center gap-2">
                   Warna :{" "}
-                  <span className="bg-[#34d14e] inline-block rounded-full w-[25px] h-[25px]"></span>
+                  <span className="bg-[#34d14e] inline-block rounded-full lg:w-[25px] w-[20px] h-[20px] lg:h-[25px]"></span>
                 </div>
-                <div className="flex items-center gap-2 mt-4">
+                <div className="flex items-center gap-2 mt-4 text-xs lg:text-base">
                   <p>Stok</p>
                   <select
                     name="stock"
                     id="stock"
-                    className="border border-gray-300 rounded-md px-3 py-1 cursor-pointer focus:outline-none text-xs"
+                    className="border border-gray-300 rounded-md px-2 lg:px-3 py-1 cursor-pointer focus:outline-none text-[10px] lg:text-xs"
                   >
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -48,32 +48,32 @@ function Cart() {
                 </div>
               </div>
             </div>
-            <div className="flex border border-gray-300 w-full relative rounded-[4px]">
-              <div className="w-[183px] h-[183px] bg-gray-200 mr-2">
+            <div className="flex lg:border border-gray-300 w-full relative rounded-[4px]">
+              <div className="lg:w-[183px] w-[115px] h-[140px] lg:h-[183px] bg-gray-200 mr-2">
                 <img
                   src="/src/assets/product/product2.png"
                   alt=""
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-[20px]">
-                <div className="absolute top-[20px] right-[20px]">
+              <div className="p-[10px] lg:p-[20px]">
+                <div className="absolute top-[10px] lg:top-[20px] right-[10px] lg:right-[20px]">
                   <button className="">
                     <i className="lni lni-trash-can text-xl text-red-500"></i>
                   </button>
                 </div>
-                <p className="font-semibold text-xl mb-2">Smartwatch X2</p>
+                <p className="font-semibold lg:text-xl text-base mb-2">Smartwatch X2</p>
                 <p className="font-semibold text-brand mb-2">Rp 899.999</p>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-xs">
                   Warna :{" "}
-                  <span className="bg-[#e0e0e0] inline-block rounded-full w-[25px] h-[25px]"></span>
+                  <span className="bg-[#e0e0e0] inline-block rounded-full lg:w-[25px] w-[20px] h-[20px] lg:h-[25px]"></span>
                 </div>
-                <div className="flex items-center gap-2 mt-4">
+                <div className="flex items-center gap-2 mt-4 text-xs lg:text-base">
                   <p>Stok</p>
                   <select
                     name="stock"
                     id="stock"
-                    className="border border-gray-300 rounded-md px-3 py-1 cursor-pointer focus:outline-none text-xs"
+                    className="border border-gray-300 rounded-md px-2 lg:px-3 py-1 cursor-pointer focus:outline-none text-[10px] lg:text-xs"
                   >
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -125,7 +125,7 @@ function Cart() {
                 <p className="text-brand">1.299.998</p>
               </div>
 
-              <Link to="/payment">
+              <Link to="/payment" className="flex flex-col">
                 <ButtonPrimary>Konfirmasi</ButtonPrimary>
               </Link>
             </div>
