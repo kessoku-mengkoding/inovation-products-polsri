@@ -49,7 +49,7 @@ function About() {
                {/* Contact */}
                <section
           id="contact"
-          className="flex flex-col lg:flex-row h-max gap-[20px] lg:gap-[60px] justify-between mt-[80px]"
+          className="flex flex-col lg:flex-row h-max gap-[20px] lg:gap-[60px] max-w-[1360px] mx-auto overflow-x-hidden justify-between mt-[80px]"
         >
           <div data-aos="fade-right">
             <div className="py-[30px] lg:py-[40px] w-full flex flex-col gap-5">

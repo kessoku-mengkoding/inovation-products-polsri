@@ -12,7 +12,8 @@ function Login() {
 
   return (
     <>
-      <div className="w-full lg:w-[500px] text-center lg:border lg:shadow-md bg-white rounded-[4px] p-[10px] py-[40px] lg:p-[40px] lg:mx-auto my-20">
+<div data-aos="fade">
+<div className="w-full lg:w-[500px] text-center lg:border lg:shadow-md bg-white rounded-[4px] p-[10px] py-[40px] lg:p-[40px] lg:mx-auto my-20">
         <div className="flex flex-col gap-1">
           <h3 className="text-2xl font-semibold mb-2">Masuk ke Akun Anda</h3>
 
@@ -82,6 +83,7 @@ function Login() {
           </div>
         </div>
       </div>
+</div>
     </>
   );
 }

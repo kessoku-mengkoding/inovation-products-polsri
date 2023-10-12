@@ -281,15 +281,15 @@ function App() {
                 <Link to="/product">
                   <div
                     data-aos="zoom-in"
-                    data-aos-delay={`${product.id * 100}`}
+                    data-aos-delay={`${product.id * 50}`}
                     key={product.name}
                   >
                     <div className="w-full h-full rounded-sm shadow-xl">
-                      <div className="overflow-hidden relative min-h-[300px] min-w-full bg-brand bg-center bg-opacity-5">
+                      <div className="overflow-hidden relative min-h-[271px] min-w-full bg-brand bg-center bg-opacity-5">
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="h-[291px] m-auto object-position"
+                          className="h-[260px] m-auto object-position"
                         />
                       </div>
                       <div className="p-[20px] flex flex-col gap-[10px] items-center">

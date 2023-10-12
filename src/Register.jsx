@@ -13,10 +13,13 @@ function Register() {
   return (
     <>
       <section className="flex justify-center items-center py-[80px] lg:py-[80px] px-4 lg:px-[80px] gap-[80px]">
+        <div data-aos="fade-right">
         <div className="lg:block hidden">
           <img src="/src/assets/onlineshop.svg" alt="onlinshop" />
         </div>
-        <div className="w-full lg:w-[500px] text-center lg:border lg:shadow-md bg-white rounded-[4px] lg:p-[40px]">
+        </div>
+    <div data-aos="zoom-in">
+    <div className="w-full lg:w-[500px] text-center lg:border lg:shadow-md bg-white rounded-[4px] lg:p-[40px]">
           <div className="flex flex-col gap-1">
             <h3 className="text-2xl font-semibold mb-2">Daftar Sekarang</h3>
 
@@ -95,6 +98,7 @@ function Register() {
             </div>
           </div>
         </div>
+    </div>
       </section>
     </>
   );
