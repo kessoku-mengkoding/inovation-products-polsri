@@ -12,7 +12,7 @@ function Register() {
 
   return (
     <>
-      <section className="flex justify-center items-center py-[80px] lg:py-[80px] px-4 lg:px-[80px] gap-[80px]">
+      <section className="flex justify-center items-center py-[80px] lg:py-[80px] px-4 lg:px-[80px] lg:gap-[80px]">
         <div className="lg:block hidden">
           <div data-aos="fade-right">
             <img src="/onlineshop.svg" alt="onlinshop" />
